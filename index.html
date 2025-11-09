@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажер скоропечатания</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Таймер вверху -->
+        <div class="timer-section">
+            <div class="timer">
+                <span class="timer-label">Время:</span>
+                <span class="timer-value" id="timer">60</span>
+                <span class="timer-unit">сек</span>
+            </div>
+            <button class="btn-start" id="startBtn">Начать тест</button>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <!-- Поле для отображения текста -->
+            <div class="text-display">
+                <div class="text-container">
+                    <p id="textContent" class="text-content"></p>
+                </div>
+                
+                <!-- Поле ввода -->
+                <div class="input-section">
+                    <input 
+                        type="text" 
+                        id="typingInput" 
+                        class="typing-input" 
+                        placeholder="Нажмите 'Начать тест' и начните печатать..." 
+                        disabled
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                </div>
+            </div>
+
+            <!-- Статистика справа -->
+            <div class="stats-panel">
+                <h3 class="stats-title">Статистика</h3>
+                
+                <div class="stat-item">
+                    <div class="stat-label">Скорость</div>
+                    <div class="stat-value">
+                        <span id="wpm">0</span>
+                        <span class="stat-unit">сл/мин</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Символов/мин</div>
+                    <div class="stat-value">
+                        <span id="cpm">0</span>
+                        <span class="stat-unit">зн/мин</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Точность</div>
+                    <div class="stat-value">
+                        <span id="accuracy">100</span>
+                        <span class="stat-unit">%</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Ошибки</div>
+                    <div class="stat-value">
+                        <span id="errors">0</span>
+                    </div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Напечатано</div>
+                    <div class="stat-value">
+                        <span id="typed">0</span>
+                        <span class="stat-unit">зн</span>
+                    </div>
+                </div>
+
+                <button class="btn-reset" id="resetBtn">Сбросить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

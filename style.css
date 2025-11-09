@@ -1,0 +1,284 @@
+/* Сброс стилей и основные настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Основной контейнер */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+/* Секция таймера вверху */
+.timer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.timer {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 24px;
+}
+
+.timer-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.timer-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: #667eea;
+    min-width: 80px;
+    text-align: center;
+}
+
+.timer-unit {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Кнопки */
+.btn-start,
+.btn-reset {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-start {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-start:active {
+    transform: translateY(0);
+}
+
+.btn-start:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-reset {
+    width: 100%;
+    background: #ff6b6b;
+    color: white;
+    margin-top: 20px;
+}
+
+.btn-reset:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Основной контент */
+.main-content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Поле отображения текста */
+.text-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text-container {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    min-height: 200px;
+    border: 2px solid #e0e0e0;
+}
+
+.text-content {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+/* Стили для проверки текста */
+.text-content .correct {
+    color: #4caf50;
+}
+
+.text-content .incorrect {
+    color: #f44336;
+    background-color: #ffebee;
+}
+
+.text-content .current {
+    background-color: #667eea;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Поле ввода */
+.input-section {
+    width: 100%;
+}
+
+.typing-input {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: 3px solid #e0e0e0;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.typing-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.typing-input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Панель статистики справа */
+.stats-panel {
+    width: 280px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stats-title {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.stat-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.stat-value {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.stat-value span:first-child {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.stat-unit {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .stats-panel {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: calc(50% - 5px);
+    }
+
+    .btn-reset {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 20px;
+    }
+
+    .timer-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .timer-value {
+        font-size: 36px;
+    }
+
+    .text-content {
+        font-size: 16px;
+    }
+
+    .typing-input {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .stat-item {
+        min-width: 100%;
+    }
+}
+    
